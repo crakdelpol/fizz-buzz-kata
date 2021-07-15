@@ -1,1 +1,6 @@
 venv/
+.idea/*
+bin/
+lib/
+pyvenv.cfg
+.idea/misc.xml
