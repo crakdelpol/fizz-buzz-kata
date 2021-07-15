@@ -7,16 +7,20 @@ class FizzBuzz(object):
         result = ""
         for index in range(index):
             number = index + 1
-            if number % 3 == 0 and number % 5 == 0:
-                result = result + "FizzBuzz\n"
-            else:
-                if number % 3 == 0:
-                    result = result + "Fizz\n"
-                elif number % 5 == 0:
-                    result = result + "Buzz\n"
-                else:
-                    result = result + str(number) + "\n"
+            result = self.convert_to_game_string(number, result)
 
+        return result
+
+    def convert_to_game_string(self, number, result):
+        if number % 3 == 0 and number % 5 == 0:
+            result = result + "FizzBuzz\n"
+        else:
+            if number % 3 == 0:
+                result = result + "Fizz\n"
+            elif number % 5 == 0:
+                result = result + "Buzz\n"
+            else:
+                result = result + str(number) + "\n"
         return result
 
 
