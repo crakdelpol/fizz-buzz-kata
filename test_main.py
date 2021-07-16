@@ -3,25 +3,26 @@ from unittest import TestCase
 
 class FizzBuzz(object):
 
-    def count(self, index):
+    def count(self, count):
         result = ""
-        for index in range(index):
-            number = index + 1
-            result = self.convert_to_game_string(number, result)
+        for index in range(1, count + 1):
+            result = self.convert_to_game_string(index, result)
 
         return result
 
     def convert_to_game_string(self, number, result):
-        if number % 3 == 0 and number % 5 == 0:
-            result = result + "FizzBuzz\n"
-        else:
-            if number % 3 == 0:
-                result = result + "Fizz\n"
-            elif number % 5 == 0:
-                result = result + "Buzz\n"
-            else:
-                result = result + str(number) + "\n"
-        return result
+
+        if number % 3 == 0:
+            result = result + "Fizz"
+
+        if number % 5 == 0:
+            result = result + "Buzz"
+
+        if number % 3 != 0 and number % 5 != 0:
+            result = result + str(number)
+
+        return result + "\n"
+
 
 
 class Test(TestCase):
